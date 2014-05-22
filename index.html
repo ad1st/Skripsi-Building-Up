@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Money Book</title>
+        
+        <link rel="stylesheet" href="jqm/jStyle.css" />
+        <link rel="stylesheet" href="jqm/jquery.mobile.structure-1.4.0.min.css" />
+        <link rel="stylesheet" href="jqm/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="jqm/jquery-ui-1.10.4.custom.min.css" />
+        
+        <script src="jqm/jquery-1.10.2.min.js"></script>        
+        <script src="jqm/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="jqm/jquery.mobile-1.4.0.min.js"></script>
+        <script src="js/script.js"></script>      
+              
+    </head>
+    <body>
+        <div data-role="page" id="Splash_Page">
+            <div data-role="header">
+                <h1>The Money Book</h1>
+            </div>
+
+            <div data-role="content">
+                <div style=" display:block;text-align:center;">
+                    <h1 style="margin-bottom:-20px;">Hi! Welcome</h1>
+                    <p>Manage your money so easy with</p>
+                    <img src="images/banner2.png" alt="404"/>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <h1>Copyright (c) 2014</h1>
+            </div>
+	    </div> 
+
+        <!--------------------------------------------------------------------------------------------
+            01 | Halaman Login
+        --------------------------------------------------------------------------------------------->
+        <div data-role="page" id="Login_Page">
+            <div data-role="header">
+                <h1>Sign In</h1>
+            </div>
+
+            <div style="margin:0px auto;display:block;text-align:center;">
+                <img src="images/banner2.png" alt="404"/></div>
+
+            <div data-role="content" data-theme="d">
+                <form id="form_login" method="post">
+                    <label for="email_login">Email</label>
+                    <input type="email" name="email_login" id="email_login">
+                    <label for="password_login">Password</label>
+                    <input type="password" name="password_login" id="password_login">
+                    <div style="margin:0px auto;display:block;text-align:right">
+                        <input type="button" data-inline="true" value="Login" id="attempting_login">
+                    </div>
+                </form>
+                <div style="text-align: center;">
+                <p id="status_koneksi">Status Koneksi</p>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <h1>Copyright (c) 2014</h1>
+            </div>
+	    </div>
+
+        <!--------------------------------------------------------------------------------------------
+            02 | Halaman Daftar
+        --------------------------------------------------------------------------------------------->
+        <div data-role="page" id="Daftar_Page">
+            <div data-role="header">
+                <h1>Sign Up</h1>
+            </div>
+
+            <div style="margin:0px auto;display:block;text-align:center;"><img src="images/banner2.png" alt="404"/></div>
+
+            <div data-role="content">
+                <form method="post" id="daftar">
+                    <label for="nama_daftar">Nama*</label>
+                    <input type="text" name="nama_daftar" id="nama_daftar">
+                    <label for="email_daftar">Email*</label>
+                    <input type="email" name="email_daftar" id="email_daftar">
+                    <label for="password_daftar">Password*</label>
+                    <input type="password" name="password_daftar" id="password_daftar">
+                    <p style="text-align: center">*Isi data Anda dengan lengkap</p>
+                    <div style="margin:0px auto;display:block;text-align:right">
+                        <input type="button" data-inline="true" value="Sign Up" id="attempting_daftar">
+                    </div>
+                </form>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <h1>Copyright (c) 2014</h1>
+            </div>
+	    </div>
+
+        <!--------------------------------------------------------------------------------------------
+            03 | Halaman Utama
+        --------------------------------------------------------------------------------------------->
+        <div data-role="page" id="Main_Page" data-position="fixed">              
+            <div data-role="header">
+                <h1>Money Book</h1>
+            </div>
+            <div data-role="content" data-theme="d">
+                <div style="text-align: center; margin: 10px auto;">
+                    <img src="images/banner2.png" alt="Smiley face"/><br>
+                </div>
+                <ul data-role="listview" data-inset="true">
+			    <li data-role="divider">Financial Reporting</li>
+                    <li>
+                        <a href="#panel"><img src="images/tips.png" alt="404">
+                            <h2>Tips And Tutorial</h2>
+                            <p>Pelajari Selengkapnya disini.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#Rencana_Page"><img src="images/plan.png" alt="404">
+                            <h2>Rencana Anda</h2>
+                            <p>Rencanakan Keuangan Anda.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#Pemasukan_Page"><img src="images/add.png" alt="404">
+                            <h2>Tambah Transaksi</h2>
+                            <p>Catat Keuangan Anda disini.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#Catatan_Pemasukan_Page"><img src="images/check.png" alt="404">
+                            <h2>Catatan Keuangan</h2>
+                            <p>Periksa Daftar Keuangan Anda.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#Laporan_Page"><img src="images/resume2.png" alt="404">
+                            <h2>Laporan Keuangan</h2>
+                            <p>Lihat Perkembangan Keuangan Anda.</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-iconpos="top">
+                <div data-role="navbar">
+		        <ul>
+                    <li><a data-icon="grid" href="#panel">Dashboard</a></li>
+			        <li><a data-icon="plus" href="#Pemasukan_Page">Transaksi</a></li>
+			        <li><a data-icon="bullets" href="#Catatan_Pemasukan_Page">List</a></li>
+                    <li><a data-icon="home" href="#Main_Page">Home</a></li>
+		        </ul>
+	            </div>
+            </div>
+	    </div>
+
+        <!--------------------------------------------------------------------------------------------
+            04 | Halaman Rencana
+        --------------------------------------------------------------------------------------------->
+        <div data-role="page" id="Rencana_Page">
+            <div data-role="header">
+                <h1>Rencana Keuangan</h1>
+            </div>            
+
+            <div data-role="content" data-theme="d">
+                <a href="#Setup_Rencana_Page" data-role="button">Let's Create The Plan!</a>                
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+		        <ul>
+                    <li><a data-icon="grid" href="#panel">Dashboard</a></li>
+			        <li><a data-icon="plus" href="#Pemasukan_Page">Transaksi</a></li>
+			        <li><a data-icon="bullets" href="#Catatan_Pemasukan_Page">List</a></li>
+                    <li><a data-icon="home" href="#Main_Page">Home</a></li>
+		        </ul>
+	            </div>
+            </div>
+	    </div>	
+
+        <!--------------------------------------------------------------------------------------------
+            05 | Halaman Rencana Setup
+        --------------------------------------------------------------------------------------------->
+        <div data-role="page" id="Setup_Rencana_Page">
+            <div data-role="header">
+                <h1>Buat Rencana</h1>
+            </div>            
+
+            <div data-role="content">
+                <div class="ui-bar ui-bar-a">
+                    <h3>Set Up Rencana</h3>
+                </div>
+                <div data-role="fieldcontain">
+                    <form method="post" id="form_setup">
+                        <label>Tanggal Mulai</label>
+                        <input type="date" name="tanggal_awal">
+                        <label>Tanggal Akhir</label>
+                        <input type="date" name="tanggal_akhir">
+                    </form>
+                </div>
+                <div style="margin:0px auto;display:block;text-align:center">
+                    <button data-inline="true" id="create_setup">Create</button>
+                </div>                
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+		        <ul>
+                    <li><a data-icon="grid" href="#panel">Dashboard</a></li>
+			        <li><a data-icon="plus" href="Pemasukan_Page">Transaksi</a></li>
+			        <li><a data-icon="bullets" href="#Catatan_Pemasukan_Page">List</a></li>
+                    <li><a data-icon="home" href="#Main_Page">Home</a></li>
+		        </ul>
+	            </div>
+            </div>
+	    </div>
+        
+        <div data-role="page" id="Setup_Rencana_Pemasukan">
+            <div data-role="header">
+                <h1>Rencana Pemasukan</h1>
+            </div>            
+
+            <div data-role="content">
+                <div class="ui-bar ui-bar-b">
+                    <h3>Kategori Pemasukan</h3>
+                </div>
+                <div data-role="fieldcontain">
+                    <form method="post" id="form_rencana_pemasukan">
+                        <input type="hidden" name="id_tipe" value="1">
+                        <div class="ui-grid-a" id="pemasukan_rencana">
+                            <div class="ui-block-a">
+                                <label for="pemasukan_plan">Kategori</label>
+                                <input type="text" name="kategori_pemasukan[]" value="Kas">
+                            </div>
+                            <div class="ui-block-b" style="padding-left: 5%;">
+                                <label>Nominal (Rp) </label>
+                                <input type="text" name="nominal_pemasukan[]" value="0">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div style="margin:0px auto;display:block;text-align: right;">
+                    <button data-theme="b" data-inline="true" id="tambah_kategori_pemasukan">+</button>
+                    <button data-theme="c" data-inline="true" id="hapus_kategori_pemasukan">-</button>
+                </div>
+                
+                <button id="save_pemasukan">Simpan</button>
+                
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+		        <ul>
+                    <li><a data-icon="grid" href="#panel">Dashboard</a></li>
+			        <li><a data-icon="plus" href="Pemasukan_Page">Transaksi</a></li>
+			        <li><a data-icon="bullets" href="#Catatan_Pemasukan_Page">List</a></li>
+                    <li><a data-icon="home" href="#Main_Page">Home</a></li>
+		        </ul>
+	            </div>
+            </div>
+	    </div>	
+
+        <div data-role="page" id="Setup_Rencana_Pengeluaran">
+            <div data-role="header">
+                <h1>Rencana Pengeluaran</h1>
+            </div>            
+
+            <div data-role="content">
+                <div class="ui-bar ui-bar-c">
+                    <h3>Kategori Pengeluaran</h3>
+                </div>
+                <div data-role="fieldcontain">
+                    <form method="post" id="form_rencana_pengeluaran">
+                        <input type="hidden" name="id_tipe" value="2">
+                        <div class="ui-grid-a" id="pengeluaran_rencana">
+                            <div class="ui-block-a">
+                                <label for="pemasukan_plan">Kategori</label>
+                                <input type="text" name="kategori_pengeluaran[]" value="Kas">
+                            </div>
+                            <div class="ui-block-b" style="padding-left: 5%;">
+                                <label>Nominal (Rp) </label>
+                                <input type="text" name="nominal_pengeluaran[]" value="0">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div style="margin:0px auto;display:block;text-align: right;">
+                    <button data-theme="b" data-inline="true" id="tambah_kategori_pengeluaran">+</button>
+                    <button data-theme="c" data-inline="true" id="hapus_kategori_pengeluaran">-</button>
+                </div>
+                <button id="save_pengeluaran">Simpan</button>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+		        <ul>
+                    <li><a data-icon="grid" href="#panel">Dashboard</a></li>
+			        <li><a data-icon="plus" href="Pemasukan_Page">Transaksi</a></li>
+			        <li><a data-icon="bullets" href="#Catatan_Pemasukan_Page">List</a></li>
+                    <li><a data-icon="home" href="#Main_Page">Home</a></li>
+		        </ul>
+	            </div>
+            </div>
+	    </div>
+
+        <!--------------------------------------------------------------------------------------------
+            06 | Halaman Transaksi  :
+               | Pemasukan
+        --------------------------------------------------------------------------------------------->
+        <div data-role="page" id="Pemasukan_Page">
+            <div data-role="header">
+                <h1>Pemasukan</h1>
+            </div>            
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#Pemasukan_Page" class="ui-btn-active" data-theme="b">Pemasukan</a></li>
+                    <li><a href="#Pengeluaran_Page" class="ui-btn-active" data-theme="c">Pengeluaran</a></li>                    
+                </ul>
+            </div>
+
+            <div data-role="content" data-theme="d">
+                <form method="post" id="form_transaksi_pemasukan">
+                    <input type="hidden" name="id_pemasukan" value="1">
+                    <label for="tanggal">Tanggal (mm/dd/yy)</label>
+                    <input type="date" name="tanggal_inc">
+                    <select id="kategori_inc" name="kategori_inc">
+                        <option value="-">-</option>
+                    </select>
+                    <label for="jumlah">Jumlah</label>
+                    <input type="text" name="jumlah_inc">
+                    <label for="deskripsi">Deskripsi</label>
+                    <input type="text" name="deskripsi_inc">
+
+                    <div style="margin:0px auto;display:block;text-align:center">
+                        <input type="button" data-inline="true" value="Tambahkan" id="tambah_pemasukan">
+                    </div>
+                </form>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+		        <ul>
+                    <li><a data-icon="grid" href="#panel">Dashboard</a></li>
+			        <li><a data-icon="plus" href="#Pemasukan_Page">Transaksi</a></li>
+			        <li><a data-icon="bullets" href="#Catatan_Pemasukan_Page">List</a></li>
+                    <li><a data-icon="home" href="#Main_Page">Home</a></li>
+		        </ul>
+	            </div>
+            </div>
+	    </div>	
+
+        <!--------------------------------------------------------------------------------------------
+            07 | Halaman Transaksi  :
+               | Pengeluaran
+        --------------------------------------------------------------------------------------------->
+        <div data-role="page" id="Pengeluaran_Page">
+            <div data-role="header">
+                <h1>Pengeluaran</h1>
+            </div>            
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#Pemasukan_Page" class="ui-btn-active" data-theme="b">Pemasukan</a></li>
+                    <li><a href="#Pengeluaran_Page" class="ui-btn-active" data-theme="c">Pengeluaran</a></li>                    
+                </ul>
+            </div>
+
+            <div data-role="content" data-theme="d">
+                <form method="post" id="form_transaksi_pengeluaran">
+                    <input type="hidden" name="id_pengeluaran" value="2">
+                    <label for="tanggal_exp">Tanggal (mm/dd/yy)</label>
+                    <input type="date" name="tanggal_exp">
+                    <select id="kategori_exp" name="kategori_exp">
+                        <option value="">-</option>
+                    </select>
+                    <label for="jumlah">Jumlah</label>
+                    <input type="text" name="jumlah_exp">
+                    <label for="deskripsi">Deskripsi</label>
+                    <input type="text" name="deskripsi_exp">
+                    <div style="margin:0px auto;display:block;text-align:center">
+                        <input type="button" data-inline="true" value="Tambahkan" id="tambah_pengeluaran">
+                    </div>
+                </form>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+		        <ul>
+                    <li><a data-icon="grid" href="#panel">Dashboard</a></li>
+			        <li><a data-icon="plus" href="#Pemasukan_Page">Transaksi</a></li>
+			        <li><a data-icon="bullets" href="#Catatan_Pemasukan_Page">List</a></li>
+                    <li><a data-icon="home" href="#Main_Page">Home</a></li>
+		        </ul>
+	            </div>
+            </div>
+	    </div>	
+
+        <!--------------------------------------------------------------------------------------------
+            08 | Halaman Catatan    : 
+               | Pemasukan
+        --------------------------------------------------------------------------------------------->
+        <div data-role="page" id="Catatan_Pemasukan_Page">
+            <div data-role="header">
+                <h1>Catatan Pemasukan</h1>
+            </div>            
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#Catatan_Pemasukan_Page" class="ui-btn-active" data-theme="b">Pemasukan</a></li>
+                    <li><a href="#Catatan_Pengeluaran_Page" class="ui-btn-active" data-theme="c">Pengeluaran</a></li>                    
+                </ul>
+            </div>
+
+            <div data-role="content">               
+                    <ol id="contacts_inc" data-role="listview" data-divider-theme="d" data-inset="false"></ol>  
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+		        <ul>
+                    <li><a data-icon="grid" href="#panel">Dashboard</a></li>
+			        <li><a data-icon="plus" href="#Pemasukan_Page">Transaksi</a></li>
+			        <li><a data-icon="bullets" href="#Catatan_Pemasukan_Page">List</a></li>
+                    <li><a data-icon="home" href="#Main_Page">Home</a></li>
+		        </ul>
+	            </div>
+            </div>
+	    </div>	
+
+        <!--------------------------------------------------------------------------------------------
+            09 | Halaman Catatan    :
+               | Pengeluaran
+        --------------------------------------------------------------------------------------------->
+        <div data-role="page" id="Catatan_Pengeluaran_Page">
+           <div data-role="header">
+                <h1>Catatan Pengeluaran</h1>
+            </div>            
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#Catatan_Pemasukan_Page" class="ui-btn-active" data-theme="b">Pemasukan</a></li>
+                    <li><a href="#Catatan_Pengeluaran_Page" class="ui-btn-active" data-theme="c">Pengeluaran</a></li>                    
+                </ul>
+            </div>          
+
+            <div data-role="content">               
+                    <ol id="contacts_exp" data-role="listview" data-divider-theme="d" data-inset="false"></ol>  
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+		        <ul>
+                    <li><a data-icon="grid" href="#panel">Dashboard</a></li>
+			        <li><a data-icon="plus" href="#Pemasukan_Page">Transaksi</a></li>
+			        <li><a data-icon="bullets" href="#Catatan_Pemasukan_Page">List</a></li>
+                    <li><a data-icon="home" href="#Main_Page">Home</a></li>
+		        </ul>
+	            </div>
+            </div>
+	    </div>	
+
+        <!--------------------------------------------------------------------------------------------
+            10 | Halaman Laporan
+        --------------------------------------------------------------------------------------------->
+        <div data-role="page" id="Laporan_Page" data-position="fixed">              
+            <div data-role="header">
+                <h1>Money Book</h1>
+            </div>
+            <div data-role="content" data-theme="d">
+                <div class="ui-body">        
+                    <p style="text-align: center"><b>Progress</b></p><br>
+                    <div id="progressbar"></div>                            
+                    <div style="display:block;text-align:center">
+                        <button data-icon="refresh" data-theme="b" data-inline="true" id="refresh">Refresh</button>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-iconpos="top">
+                <div data-role="navbar">
+		        <ul>
+                    <li><a data-icon="grid" href="#panel">Dashboard</a></li>
+			        <li><a data-icon="plus" href="#Pemasukan_Page">Transaksi</a></li>
+			        <li><a data-icon="bullets" href="#Catatan_Pemasukan_Page">List</a></li>
+                    <li><a data-icon="home" href="#Main_Page">Home</a></li>
+		        </ul>
+	            </div>
+            </div>
+	    </div>
+
+        <!--------------------------------------------------------------------------------------------
+            Dialog Error
+        --------------------------------------------------------------------------------------------->
+        <div id="Error_PopUp" data-role="dialog" >
+		<div data-role="header">
+			<h1>Info</h1>
+		</div>
+		<div data-role="content">
+			<p>Maaf, Terjadi Kesalahan.<br>
+            Periksa data yang Anda Inputkan dan <br>
+            Periksa Koneksi jaringan Anda </p>
+			<a href="#" data-role="button" data-rel="back">Close</a>
+		</div>
+        </div>
+
+        <!--------------------------------------------------------------------------------------------
+            Dialog Data Sukses
+        --------------------------------------------------------------------------------------------->
+        <div id="Data_OK" data-role="dialog" data-theme="a">
+		<div data-role="header">
+			<h1>Berhasil!</h1>
+		</div>
+		<div data-role="content">
+            <p>Horeeii! Rencana Anda selesai dibuat!</p>
+			<a href="#Main_Page" data-role="button">Ok, lanjutkan</a>
+		</div>
+        </div>
+
+        <!--------------------------------------------------------------------------------------------
+            Dialog Data Transaksi Sukses
+        --------------------------------------------------------------------------------------------->
+        <div id="Transaksi_OK" data-role="dialog" data-theme="a">
+		<div data-role="header">
+			<h1>Hebat!</h1>
+		</div>
+		<div data-role="content">
+            <p>Lanjutkan pencatatan keuangan Anda agar keuangan Anda selalu dalam keadaan baik :)</p>
+			<a href="#Pemasukan_Page" data-role="button">Ok, lanjutkan</a>
+		</div>
+        </div>
+
+    </body>
+</html>
